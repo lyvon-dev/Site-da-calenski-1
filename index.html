@@ -319,17 +319,18 @@
 
   .hero-visual{ position:relative; }
   .hero-frame{
-    position:relative;
-    border-radius:6px;
-    overflow:hidden;
-    aspect-ratio:4/5;
-    box-shadow:0 40px 80px -30px rgba(20,24,27,.35);
-  }
-  .hero-frame img{ width:100%; height:100%; object-fit:cover; will-change:transform; transform:scale(1.12); }
-  .hero-frame::after{
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(20,24,27,0) 55%, rgba(20,24,27,.55) 100%);
-  }
+  position:relative;
+  border-radius:6px;
+  overflow:hidden;
+  aspect-ratio:4/3;   /* era 4/5 — agora combina com foto paisagem */
+  box-shadow:0 40px 80px -30px rgba(20,24,27,.35);
+}
+.hero-frame img{
+  width:100%; height:100%; object-fit:cover;
+  object-position:center 30%;  /* ajusta o foco vertical se ainda cortar teto/balcão */
+  will-change:transform;
+  transform:scale(1.05);  /* reduzi o zoom de 1.12 pra 1.05 */
+}
   .hero-frame .cap{
     position:absolute; left:22px; bottom:20px; z-index:2;
     color:var(--bone); font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase;
